@@ -10,10 +10,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
-                "-pthread",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/*.cpp",         // 1. 所有的源文件（输入）
+                "-pthread",                     // 2. 线程库支持
+                "-o",                           // 3. 输出标志
+                "${fileDirname}/${fileBasenameNoExtension}" // 4. 生成的目标文件名（输出）
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
